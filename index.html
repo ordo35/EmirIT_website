@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EmirIT provides enterprise-grade computer hardware, robust network infrastructure, and scalable cloud solutions for modern organizations.">
+  <meta name="keywords" content="IT services, hardware procurement, network infrastructure, enterprise cloud, IT consulting">
+  <meta name="author" content="EmirIT Solutions">
+  <meta name="theme-color" content="#0a192f">
+  <title>EmirIT - Enterprise IT Services & Solutions</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header" role="banner">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="EmirIT Home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            <line x1="10" y1="6" x2="18" y2="6"></line>
+            <line x1="10" y1="18" x2="18" y2="18"></line>
+          </svg>
+        </span>
+        <span class="logo-text">Emir<span class="accent-text">IT</span></span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#services" class="nav-link">Overview</a></li>
+          <li class="nav-item"><a href="#hardware" class="nav-link">Hardware</a></li>
+          <li class="nav-item"><a href="pc-builder.html" class="nav-link">PC Simulator</a></li>
+          <li class="nav-item"><a href="#networking" class="nav-link">Networking</a></li>
+          <li class="nav-item"><a href="#cloud" class="nav-link">Cloud Solutions</a></li>
+          <li class="nav-item">
+            <a href="#contact" class="btn btn-outline nav-btn">Request Quote</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-tag">
+            <span class="badge-pulse"></span>
+            Enterprise IT Engineering & Procurement
+          </div>
+          <h1 id="hero-title" class="hero-title">
+            Architecting Resilient <span class="text-gradient">Hardware, Networks & Cloud</span> Infrastructure
+          </h1>
+          <p class="hero-description">
+            EmirIT equips modern enterprises with high-performance computing hardware, certified network deployments, and future-ready cloud architectures backed by 24/7 SLA assurance.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+            <a href="pc-builder.html" class="btn btn-secondary">⚡ Try PC Simulator</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">99.99%</span>
+              <span class="stat-label">Uptime Reliability SLA</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">15 Min</span>
+              <span class="stat-label">Critical Response Time</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Enterprise Clients</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="tech-card-showcase">
+            <div class="visual-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="panel-title">EmirIT Telemetry Center</span>
+            </div>
+            <div class="visual-body">
+              <div class="telemetry-row">
+                <span class="metric-label">Network Latency</span>
+                <div class="meter-bar"><div class="fill latency-fill"></div></div>
+                <span class="metric-val">1.2ms</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="metric-label">Cloud Virtual Cluster</span>
+                <div class="meter-bar"><div class="fill cluster-fill"></div></div>
+                <span class="metric-val">99.98%</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="metric-label">Storage Array Health</span>
+                <div class="meter-bar"><div class="fill storage-fill"></div></div>
+                <span class="metric-val">Optimal</span>
+              </div>
+              <div class="rack-illustration">
+                <div class="rack-unit u1"><span>Server Unit 01 // Active</span><span class="led active"></span></div>
+                <div class="rack-unit u2"><span>Core Switch // 100GbE</span><span class="led active"></span></div>
+                <div class="rack-unit u3"><span>Cloud Gateway // Zero-Trust</span><span class="led active"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="section services-overview" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">Core Specializations</p>
+          <h2 id="services-title" class="section-title">Comprehensive IT Infrastructure Services</h2>
+          <p class="section-description">
+            From physical silicon to virtual clouds, EmirIT delivers end-to-end reliability, cybersecurity compliance, and ongoing lifecycle optimization.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <article class="service-card" tabindex="0">
+            <div class="service-icon hardware-color" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="service-name">Computer Hardware & Components</h3>
+            <p class="service-text">
+              Direct procurement of enterprise rack servers, mission-critical workstations, flash storage, and specialized modular hardware upgrades.
+            </p>
+            <ul class="service-feature-list">
+              <li>OEM Certified Hardware Delivery</li>
+              <li>Custom Multi-GPU & AI Workstations</li>
+              <li>Asset Lifecycle & Warranty Coverage</li>
+            </ul>
+            <a href="#hardware" class="card-link">View Hardware Catalog &rarr;</a>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card featured-service" tabindex="0">
+            <div class="service-icon network-color" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3 class="service-name">Network Infrastructure Setup</h3>
+            <p class="service-text">
+              Zero-Trust network architecture, low-latency structured cabling, multi-gigabit wireless backbones, and continuous proactive NOC surveillance.
+            </p>
+            <ul class="service-feature-list">
+              <li>Structured Cat6A / Fiber Optic Cabling</li>
+              <li>Enterprise SD-WAN & Firewall Security</li>
+              <li>24/7 Automated Threat & Uptime Monitoring</li>
+            </ul>
+            <a href="#networking" class="card-link">Explore Network Solutions &rarr;</a>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card" tabindex="0">
+            <div class="service-icon cloud-color" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h3 class="service-name">Cloud Services & Solutions</h3>
+            <p class="service-text">
+              Turnkey cloud migrations, hybrid infrastructure federation across AWS/Azure, automated disaster recovery vaults, and FinOps cost reduction.
+            </p>
+            <ul class="service-feature-list">
+              <li>Hybrid & Multi-Cloud Architecture</li>
+              <li>Virtual Desktop (VDI) Implementations</li>
+              <li>Encrypted Immutable Cloud Backups</li>
+            </ul>
+            <a href="#cloud" class="card-link">Discover Cloud Engineering &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware & Components Catalog Grid Section -->
+    <section class="section hardware-section" id="hardware" aria-labelledby="hardware-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Procurement & Component Systems</p>
+          <h2 id="hardware-title" class="section-title">Enterprise Hardware Catalog</h2>
+          <p class="section-description">
+            High-availability computing gear verified for mission-critical operations. Filter by category to view detailed hardware capabilities.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls" role="group" aria-label="Hardware Category Filters">
+          <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">All Hardware</button>
+          <button class="filter-btn" data-filter="servers" type="button" aria-pressed="false">Enterprise Servers</button>
+          <button class="filter-btn" data-filter="workstations" type="button" aria-pressed="false">Workstations</button>
+          <button class="filter-btn" data-filter="storage" type="button" aria-pressed="false">Storage & NAS</button>
+          <button class="filter-btn" data-filter="components" type="button" aria-pressed="false">Modular Components</button>
+        </div>
+
+        <!-- Live Products Grid -->
+        <div class="catalog-grid" id="catalog-container" aria-live="polite">
+          <!-- Item 1 -->
+          <article class="catalog-card" data-category="servers">
+            <div class="catalog-card-header">
+              <span class="catalog-badge">Rackmount 2U</span>
+              <span class="catalog-stock in-stock">Certified In-Stock</span>
+            </div>
+            <h3 class="catalog-title">ProScale Enterprise Dual-Socket Server</h3>
+            <p class="catalog-specs">Up to 128 Cores AMD EPYC / Intel Xeon Scalable, 2TB DDR5 ECC, Redundant Titanium 1200W PSU, IPMI 2.0.</p>
+            <div class="catalog-features">
+              <span class="tag">Dual 25GbE SFP28</span>
+              <span class="tag">NVMe U.3 Ready</span>
+              <span class="tag">5-Year Next-Business-Day</span>
+            </div>
+            <div class="catalog-footer">
+              <button class="btn btn-sm btn-outline select-item-btn" data-item="ProScale Enterprise Server" type="button">Request Specs</button>
+            </div>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="catalog-card" data-category="workstations">
+            <div class="catalog-card-header">
+              <span class="catalog-badge">Tower Workstation</span>
+              <span class="catalog-stock in-stock">Custom Assembled</span>
+            </div>
+            <h3 class="catalog-title">ApexRender Studio & CAD Workstation</h3>
+            <p class="catalog-specs">AMD Ryzen 9 / Threadripper Pro, 128GB DDR5, Dual NVIDIA RTX 4090 / Ada GPUs, 4TB Gen5 NVMe Array.</p>
+            <div class="catalog-features">
+              <span class="tag">Acoustic Liquid Cooling</span>
+              <span class="tag">ISV Certified</span>
+              <span class="tag">ECC Memory</span>
+            </div>
+            <div class="catalog-footer">
+              <button class="btn btn-sm btn-outline select-item-btn" data-item="ApexRender Workstation" type="button">Request Specs</button>
+            </div>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="catalog-card" data-category="storage">
+            <div class="catalog-card-header">
+              <span class="catalog-badge">High-Density SAN/NAS</span>
+              <span class="catalog-stock in-stock">Configurable</span>
+            </div>
+            <h3 class="catalog-title">VaultCore Unified All-Flash Storage Array</h3>
+            <p class="catalog-specs">24-Bay 2.5" NVMe PCIe 5.0, dual-controller active-active cluster, up to 368TB raw capacity, sub-millisecond latency.</p>
+            <div class="catalog-features">
+              <span class="tag">Inline Deduplication</span>
+              <span class="tag">Snapshots & Replication</span>
+              <span class="tag">Fibre Channel / iSCSI</span>
+            </div>
+            <div class="catalog-footer">
+              <button class="btn btn-sm btn-outline select-item-btn" data-item="VaultCore All-Flash Array" type="button">Request Specs</button>
+            </div>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="catalog-card" data-category="servers">
+            <div class="catalog-card-header">
+              <span class="catalog-badge">High-Density Blade</span>
+              <span class="catalog-stock in-stock">Enterprise</span>
+            </div>
+            <h3 class="catalog-title">HyperNode 4-Node 2U High-Compute Cluster</h3>
+            <p class="catalog-specs">Four independent compute nodes in a 2U chassis, designed for virtualization, container clusters, and private cloud.</p>
+            <div class="catalog-features">
+              <span class="tag">Shared Redundant Power</span>
+              <span class="tag">Direct Liquid Assist</span>
+              <span class="tag">VMware / KVM Ready</span>
+            </div>
+            <div class="catalog-footer">
+              <button class="btn btn-sm btn-outline select-item-btn" data-item="HyperNode 4-Node Cluster" type="button">Request Specs</button>
+            </div>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="catalog-card" data-category="components">
+            <div class="catalog-card-header">
+              <span class="catalog-badge">Component Upgrades</span>
+              <span class="catalog-stock in-stock">Bulk Ready</span>
+            </div>
+            <h3 class="catalog-title">Enterprise Memory & Micron NVMe Storage Packs</h3>
+            <p class="catalog-specs">High-capacity Registered ECC DDR5 memory modules (32GB-128GB) and PCIe 5.0 U.2/U.3 endurance SSDs.</p>
+            <div class="catalog-features">
+              <span class="tag">3 DWPD Endurance</span>
+              <span class="tag">Hardware Encryption (SED)</span>
+              <span class="tag">Burn-in Tested</span>
+            </div>
+            <div class="catalog-footer">
+              <button class="btn btn-sm btn-outline select-item-btn" data-item="Enterprise Memory & Storage Pack" type="button">Request Specs</button>
+            </div>
+          </article>
+
+          <!-- Item 6 -->
+          <article class="catalog-card" data-category="workstations">
+            <div class="catalog-card-header">
+              <span class="catalog-badge">Compact Pro</span>
+              <span class="catalog-stock in-stock">Fleet Ready</span>
+            </div>
+            <h3 class="catalog-title">FleetCore Small Form Factor Enterprise PC</h3>
+            <p class="catalog-specs">Energy-efficient corporate desktop with Intel vPro remote manageability, dual 4K display outputs, and TPM 2.0 chip.</p>
+            <div class="catalog-features">
+              <span class="tag">vPro Out-of-band Mgmt</span>
+              <span class="tag">Whisper Quiet</span>
+              <span class="tag">ENERGY STAR Certified</span>
+            </div>
+            <div class="catalog-footer">
+              <button class="btn btn-sm btn-outline select-item-btn" data-item="FleetCore Corporate PC" type="button">Request Specs</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Network Infrastructure Section -->
+    <section class="section network-section" id="networking" aria-labelledby="networking-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Connectivity, Performance & Zero-Trust</p>
+          <h2 id="networking-title" class="section-title">Network Infrastructure & Maintenance</h2>
+          <p class="section-description">
+            We engineer secure, redundant, and ultra-high-speed network fabrics that eliminate bottlenecks and protect company data from boundary to endpoint.
+          </p>
+        </div>
+
+        <div class="network-showcase-grid">
+          <div class="network-features-column">
+            <!-- Feature 1 -->
+            <div class="network-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">Zero-Trust Perimeter & Next-Gen Firewalls</h3>
+                <p class="pillar-text">Deployment of AI-driven Next-Generation Firewalls (NGFW), micro-segmentation, deep packet inspection, and end-to-end encrypted tunnels.</p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="network-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">Structured Cabling & Fiber Optic Backbones</h3>
+                <p class="pillar-text">Certified Cat6A and single/multi-mode OM4/OM5 fiber deployments with OTDR certification and labeled patch bay organization.</p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="network-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">High-Density Wi-Fi 6E & Wi-Fi 7 Deployments</h3>
+                <p class="pillar-text">Site survey RF planning, interference avoidance, seamless roaming between access points, and segregated guest/corporate SSID policies.</p>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="network-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">24/7 Managed NOC & Uptime Telemetry</h3>
+                <p class="pillar-text">Continuous automated SNMP/NetFlow monitoring with automatic failover triggers, cellular backup WAN, and prompt on-site incident response.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Network Diagnostic Matrix -->
+          <div class="network-diagram-box">
+            <div class="diagram-card">
+              <div class="diagram-header">
+                <h4>Network Architecture & Redundancy Topology</h4>
+                <span class="status-indicator-live">Live Monitored</span>
+              </div>
+              <div class="topology-stack">
+                <div class="topo-node cloud-node">
+                  <span class="topo-tag">Tier 1 ISP Dual Uplink</span>
+                  <p>Redundant BGP Peering / Carrier Neutral</p>
+                </div>
+                <div class="topo-connector">
+                  <div class="flow-dot"></div>
+                </div>
+                <div class="topo-node firewall-node">
+                  <span class="topo-tag">Active-Passive Firewall Cluster</span>
+                  <p>Stateful Failover &amp; IPS Real-time Inspection</p>
+                </div>
+                <div class="topo-connector">
+                  <div class="flow-dot"></div>
+                </div>
+                <div class="topo-node core-node">
+                  <span class="topo-tag">Core Switching Layer (100GbE)</span>
+                  <p>LACP Link Aggregation &amp; VRRP Redundancy</p>
+                </div>
+                <div class="topo-connector">
+                  <div class="flow-dot"></div>
+                </div>
+                <div class="topo-node edge-node">
+                  <span class="topo-tag">Access Layer &amp; IoT Enclaves</span>
+                  <p>802.1X Dynamic VLAN Port Security</p>
+                </div>
+              </div>
+              <div class="diagram-footer">
+                <div class="benchmark-pill"><span>Packet Loss:</span> <strong>0.0001%</strong></div>
+                <div class="benchmark-pill"><span>Failover Time:</span> <strong>&lt; 300ms</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cloud Services & Solutions Section -->
+    <section class="section cloud-section" id="cloud" aria-labelledby="cloud-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">Scalable Multi-Cloud Environments</p>
+          <h2 id="cloud-title" class="section-title">Cloud Services & Architecture Solutions</h2>
+          <p class="section-description">
+            Accelerate your digital evolution with cloud strategies customized for cost control, security posture, and elastic agility.
+          </p>
+        </div>
+
+        <div class="cloud-features-grid">
+          <div class="cloud-card">
+            <div class="cloud-card-header">
+              <div class="cloud-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <h3>Hybrid & Multi-Cloud Migration</h3>
+            </div>
+            <p>Seamlessly interconnect on-premises workloads with AWS, Microsoft Azure, and Google Cloud Platform with unified governance and single-pane management.</p>
+            <ul class="check-list">
+              <li>Infrastructure as Code (Terraform / Ansible)</li>
+              <li>Minimal Downtime Live Workload Migration</li>
+              <li>Hybrid Direct Connect & VPN Peering</li>
+            </ul>
+          </div>
+
+          <div class="cloud-card">
+            <div class="cloud-card-header">
+              <div class="cloud-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Virtual Desktop Infrastructure (VDI)</h3>
+            </div>
+            <p>Empower distributed workforces with secure, high-performance virtual desktops streamed from the cloud with strict data leak prevention controls.</p>
+            <ul class="check-list">
+              <li>Azure Virtual Desktop (AVD) / AWS WorkSpaces</li>
+              <li>Zero Data Stored on Client Endpoints</li>
+              <li>Instant Onboarding & Central Image Updates</li>
+            </ul>
+          </div>
+
+          <div class="cloud-card">
+            <div class="cloud-card-header">
+              <div class="cloud-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v4"></path>
+                  <path d="M12 18v4"></path>
+                  <path d="M4.93 4.93l2.83 2.83"></path>
+                  <path d="M16.24 16.24l2.83 2.83"></path>
+                  <path d="M2 12h4"></path>
+                  <path d="M18 12h4"></path>
+                  <path d="M4.93 19.07l2.83-2.83"></path>
+                  <path d="M16.24 7.76l2.83-2.83"></path>
+                </svg>
+              </div>
+              <h3>Disaster Recovery as a Service (DRaaS)</h3>
+            </div>
+            <p>Ensure business continuity against ransomware and hardware failures with continuous cloud replication and orchestrated recovery workflows.</p>
+            <ul class="check-list">
+              <li>Near-Zero RPO and RTO Targets</li>
+              <li>Air-Gapped Immutable Backups</li>
+              <li>Automated Disaster Recovery Testing</li>
+            </ul>
+          </div>
+
+          <div class="cloud-card">
+            <div class="cloud-card-header">
+              <div class="cloud-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3>FinOps & Cloud Cost Governance</h3>
+            </div>
+            <p>Eliminate unnecessary cloud expenditures through rightsizing, reserved instance planning, automated scheduling, and continuous tier optimization.</p>
+            <ul class="check-list">
+              <li>Average 32% Cloud Bill Reduction</li>
+              <li>Granular Departmental Cost Allocation</li>
+              <li>Real-time Anomaly Spending Alerts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Service Request & Consultation Form Section -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info-col">
+            <p class="section-subtitle">Engage With Our Engineers</p>
+            <h2 id="contact-title" class="contact-title">Request an IT Assessment &amp; Proposal</h2>
+            <p class="contact-description">
+              Discuss your upcoming hardware procurement, infrastructure expansion, or cloud migration with senior IT architects. We provide comprehensive technical evaluations within 24 hours.
+            </p>
+
+            <div class="direct-contact-points">
+              <div class="contact-point">
+                <div class="point-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Direct Engineering Dispatch</strong>
+                  <p>+1 (800) 555-EMIR-IT</p>
+                </div>
+              </div>
+
+              <div class="contact-point">
+                <div class="point-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Official Inquiries</strong>
+                  <p>solutions@emirit.example.com</p>
+                </div>
+              </div>
+
+              <div class="contact-point">
+                <div class="point-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Response SLA</strong>
+                  <p>&lt; 24 Hours Guaranteed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Interactive Form -->
+          <div class="contact-form-col">
+            <form id="quote-form" class="quote-form" novalidate aria-label="IT Service Request Form">
+              <div class="form-header">
+                <h3>Technical Consultation Request</h3>
+                <p>Fill out the parameters below to configure your IT service request.</p>
+              </div>
+
+              <!-- Alert Box for submission notifications -->
+              <div id="form-alert" class="form-alert" role="alert" aria-live="polite" style="display:none;"></div>
+
+              <div class="form-grid">
+                <!-- Full Name -->
+                <div class="form-group">
+                  <label for="fullName">Full Name <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Sarah Jenkins" required minlength="2" autocomplete="name" aria-describedby="fullNameError">
+                  <span id="fullNameError" class="field-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Business Email -->
+                <div class="form-group">
+                  <label for="businessEmail">Business Email <span class="required" aria-hidden="true">*</span></label>
+                  <input type="email" id="businessEmail" name="businessEmail" class="form-input" placeholder="name@company.com" required autocomplete="email" aria-describedby="emailError">
+                  <span id="emailError" class="field-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                  <label for="phoneNumber">Contact Phone</label>
+                  <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" placeholder="+1 (555) 019-2834" autocomplete="tel">
+                </div>
+
+                <!-- Service Category -->
+                <div class="form-group">
+                  <label for="serviceCategory">Target Core Domain <span class="required" aria-hidden="true">*</span></label>
+                  <select id="serviceCategory" name="serviceCategory" class="form-input" required aria-describedby="categoryError">
+                    <option value="" disabled selected>Select Primary Service Domain</option>
+                    <option value="hardware">Computer Hardware &amp; Components</option>
+                    <option value="networking">Network Infrastructure Setup &amp; Maintenance</option>
+                    <option value="cloud">Cloud Services &amp; Hybrid Architecture</option>
+                    <option value="comprehensive">Comprehensive IT Transformation (All Pillars)</option>
+                  </select>
+                  <span id="categoryError" class="field-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Organization Scale -->
+                <div class="form-group">
+                  <label for="orgScale">Organization Scale</label>
+                  <select id="orgScale" name="orgScale" class="form-input">
+                    <option value="1-50">1 - 50 Endpoints / Employees</option>
+                    <option value="51-250">51 - 250 Endpoints</option>
+                    <option value="251-1000">251 - 1,000 Endpoints</option>
+                    <option value="1000+">1,000+ Enterprise Tier</option>
+                  </select>
+                </div>
+
+                <!-- Timeline -->
+                <div class="form-group">
+                  <label for="timeline">Implementation Horizon</label>
+                  <select id="timeline" name="timeline" class="form-input">
+                    <option value="immediate">Immediate (&lt; 30 Days)</option>
+                    <option value="quarter">This Quarter (1 - 3 Months)</option>
+                    <option value="planning">Budgetary &amp; Future Planning (3+ Months)</option>
+                  </select>
+                </div>
+
+                <!-- Scope Details -->
+                <div class="form-group full-width">
+                  <label for="projectDetails">Infrastructure Requirements &amp; Scope <span class="required" aria-hidden="true">*</span></label>
+                  <textarea id="projectDetails" name="projectDetails" class="form-input form-textarea" rows="4" placeholder="Outline your requirements (e.g., rack server count, branch office Wi-Fi upgrade, cloud migration target)..." required minlength="10" aria-describedby="detailsError"></textarea>
+                  <span id="detailsError" class="field-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Consent Checkbox -->
+                <div class="form-group full-width checkbox-group">
+                  <label class="checkbox-label" for="ndaConsent">
+                    <input type="checkbox" id="ndaConsent" name="ndaConsent" required aria-describedby="consentError">
+                    <span>I request an engineering consultation under mutual Non-Disclosure Agreement (NDA) guidelines.</span>
+                  </label>
+                  <span id="consentError" class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-action">
+                <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                  <span class="btn-text">Transmit IT Request &amp; Generate Estimate</span>
+                  <span class="btn-spinner" aria-hidden="true" style="display: none;"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo footer-logo">
+            <span class="logo-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              </svg>
+            </span>
+            <span class="logo-text">Emir<span class="accent-text">IT</span></span>
+          </a>
+          <p class="footer-bio">
+            Enterprise IT solutions, high-grade hardware delivery, resilient networking, and scalable cloud engineering designed for tomorrow's business demands.
+          </p>
+          <div class="compliance-badges">
+            <span class="badge-pill">SOC2 Type II Ready</span>
+            <span class="badge-pill">ISO 27001 Aligned</span>
+            <span class="badge-pill">Zero-Trust Certified</span>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#hardware">Servers &amp; Workstations</a></li>
+            <li><a href="#hardware">Component Upgrades</a></li>
+            <li><a href="#networking">Structured Cabling &amp; Fiber</a></li>
+            <li><a href="#networking">Managed Enterprise Firewalls</a></li>
+            <li><a href="#cloud">Cloud Migration &amp; VDI</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Architecture</h4>
+          <ul class="footer-links">
+            <li><a href="#networking">Network Operations (NOC)</a></li>
+            <li><a href="#cloud">Disaster Recovery (DRaaS)</a></li>
+            <li><a href="#services">IT Lifecycle Support</a></li>
+            <li><a href="#contact">Consultation Matrix</a></li>
+            <li><a href="#hero">SLA Performance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Contact &amp; Support</h4>
+          <p class="footer-contact-item"><strong>Headquarters:</strong> 100 Tech Enterprise Blvd, Suite 800</p>
+          <p class="footer-contact-item"><strong>Support Hotline:</strong> +1 (800) 555-EMIR-IT</p>
+          <p class="footer-contact-item"><strong>NOC Operations:</strong> noc@emirit.example.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="year"></span> EmirIT Solutions Ltd. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Framework</a>
+          <span class="divider-dot" aria-hidden="true">&bull;</span>
+          <a href="#">Terms of Governance</a>
+          <span class="divider-dot" aria-hidden="true">&bull;</span>
+          <a href="#">Service Level Agreements</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
