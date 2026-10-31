@@ -1,0 +1,80 @@
+{
+  "site_title": "EmirIT - Enterprise IT Services & Solutions",
+  "navigation": [
+    { "label": "Services", "href": "#services" },
+    { "label": "Hardware", "href": "#hardware" },
+    { "label": "Networking", "href": "#networking" },
+    { "label": "Cloud Solutions", "href": "#cloud" },
+    { "label": "Request Consultation", "href": "#contact" }
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "component": "HeroSection",
+      "title": "Empowering Enterprise Infrastructure & Next-Gen Cloud IT",
+      "subtitle": "High-performance hardware procurement, resilient network architecture, and scalable cloud engineering customized for modern enterprises.",
+      "ctas": [
+        { "label": "Explore Services", "href": "#services", "style": "primary" },
+        { "label": "Request IT Assessment", "href": "#contact", "style": "secondary" }
+      ],
+      "metrics": [
+        { "metric": "99.99%", "label": "Network Uptime SLA" },
+        { "metric": "24/7/365", "label": "Rapid Response IT Support" },
+        { "metric": "500+", "label": "Enterprise Deployments" }
+      ]
+    },
+    {
+      "id": "services",
+      "component": "CoreServicesOverview",
+      "title": "Core IT Capabilities",
+      "description": "Comprehensive lifecycle management for hardware, enterprise connectivity, and scalable cloud migrations."
+    },
+    {
+      "id": "hardware",
+      "component": "HardwareCatalogSection",
+      "title": "Computer Hardware & Components",
+      "description": "Enterprise-grade servers, high-performance workstations, secure storage arrays, and tailored component procurement.",
+      "categories": ["All", "Workstations & PCs", "Enterprise Servers", "Storage & Backup", "Component Upgrades"]
+    },
+    {
+      "id": "networking",
+      "component": "NetworkInfrastructureSection",
+      "title": "Network Infrastructure Setup & Maintenance",
+      "description": "Zero-trust network architecture, SD-WAN, managed switches, and proactive 24/7 telemetry monitoring.",
+      "sub_services": [
+        "Structured Cabling & Fiber Optics",
+        "Enterprise Wi-Fi 6E/7 Deployments",
+        "Next-Gen Firewall (NGFW) & Threat Shielding",
+        "Proactive Monitoring & Disaster Recovery"
+      ]
+    },
+    {
+      "id": "cloud",
+      "component": "CloudSolutionsSection",
+      "title": "Cloud Services & Modern Solutions",
+      "description": "Seamless hybrid and multi-cloud transitions, virtual desktop infrastructure (VDI), and automated cloud backups.",
+      "features": [
+        "Hybrid Cloud Architecture (AWS, Azure, GCP)",
+        "Automated Disaster Recovery & Geo-Redundancy",
+        "Secure Virtual Desktop (VDI) Environments",
+        "Continuous Cloud Cost Optimization"
+      ]
+    },
+    {
+      "id": "contact",
+      "component": "InteractiveServiceQuoteSection",
+      "title": "Request an IT Consultation or Quote",
+      "description": "Tell us about your infrastructure requirements and our systems engineers will deliver an evaluation and quote within 24 hours."
+    }
+  ],
+  "footer": {
+    "company": "EmirIT Solutions Ltd.",
+    "tagline": "Architecting resilient digital foundations for progressive enterprises.",
+    "links": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms of Service", "href": "#" },
+      { "label": "SLA Commitments", "href": "#" }
+    ]
+  }
+}
+

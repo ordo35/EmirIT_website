@@ -1,0 +1,894 @@
+/* ==========================================================================
+   EmirIT Interactive PC Building Simulator Stylesheet
+   Vanilla CSS3 (Flexbox, Grid, Animations, Mobile-First)
+   ========================================================================== */
+
+/* Simulator Page Header */
+.builder-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.22) 0%, transparent 70%),
+              var(--color-primary-dark);
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.builder-subtitle {
+  color: #94a3b8;
+  max-width: 720px;
+  margin: 0.75rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Builder Workspace Section */
+.builder-workspace-section {
+  background-color: #0b1329;
+  background-image: 
+    radial-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(2, 132, 199, 0.05) 1px, #090e1e 1px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  min-height: calc(100vh - 250px);
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+/* Dynamic Guidance & Progress Bar */
+.instruction-bar {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.step-indicator-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.step-badge {
+  background: linear-gradient(135deg, #0284c7 0%, #00d2ff 100%);
+  color: #04101e;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+  white-space: nowrap;
+}
+
+.instruction-text-block .current-step-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.instruction-text-block .current-step-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.progress-container {
+  min-width: 260px;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.45rem;
+}
+
+.progress-label {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.progress-val {
+  color: var(--color-accent-cyan);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #00d2ff);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+}
+
+/* Studio Layout (Sidebar & Viewport) */
+.studio-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Components Inventory Palette */
+.palette-sidebar {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-xl);
+}
+
+.palette-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.palette-header h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.inventory-counter {
+  font-size: 0.75rem;
+  background: rgba(0, 210, 255, 0.1);
+  color: var(--color-accent-cyan);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.palette-hint {
+  color: #64748b;
+  font-size: 0.825rem;
+  margin-bottom: 1.5rem;
+}
+
+.components-palette {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Draggable Component Card */
+.component-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  cursor: grab;
+  user-select: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.component-card:hover:not(.locked):not(.installed) {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: var(--color-accent-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 210, 255, 0.2);
+}
+
+.component-card:active:not(.locked):not(.installed) {
+  cursor: grabbing;
+}
+
+/* Active Dragging States */
+.component-card.dragging {
+  opacity: 0.45;
+  border: 2px dashed var(--color-accent-cyan);
+  background: rgba(0, 210, 255, 0.08);
+}
+
+.component-card.active-target {
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+  animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+  0% { border-color: rgba(0, 210, 255, 0.4); }
+  50% { border-color: rgba(0, 210, 255, 1); }
+  100% { border-color: rgba(0, 210, 255, 0.4); }
+}
+
+.component-card.locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+  border-style: dashed;
+}
+
+.component-card.installed {
+  opacity: 0.3;
+  cursor: default;
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
+  pointer-events: none;
+}
+
+.comp-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(2, 132, 199, 0.15);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comp-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.comp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.comp-name {
+  color: #ffffff;
+  font-size: 0.925rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.order-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.comp-spec {
+  display: block;
+  font-size: 0.775rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drag-handle {
+  color: #64748b;
+  font-size: 1.2rem;
+  padding: 0 0.25rem;
+}
+
+.palette-actions {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-icon {
+  margin-right: 0.35rem;
+}
+
+/* PC Chassis Viewport */
+.chassis-viewport {
+  position: relative;
+}
+
+.chassis-frame {
+  background: #0f172a;
+  border: 2px solid #334155;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chassis-topbar {
+  background: #090e1a;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #1e293b;
+}
+
+.chassis-brand {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.chassis-indicators {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.indicator-led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #475569;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.indicator-led.powered {
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981, 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+.led-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Chassis Interior Layout */
+.chassis-interior {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+  background: radial-gradient(circle at 50% 50%, #15213b 0%, #0c1427 100%);
+  position: relative;
+}
+
+/* Generic Chassis Drop Slot */
+.chassis-slot {
+  border: 2px dashed #334155;
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slot-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.5rem 1rem;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.slot-placeholder.mini {
+  padding: 0.75rem 0.5rem;
+}
+
+.slot-marker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  color: #94a3b8;
+}
+
+.slot-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.slot-action-text {
+  font-size: 0.8rem;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+/* Slot Highlights when Hovered / Active Drag */
+.chassis-slot.highlight-target {
+  border-color: var(--color-accent-cyan);
+  background: rgba(0, 210, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);
+  animation: pulse-drop 1.5s infinite;
+}
+
+@keyframes pulse-drop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+
+.chassis-slot.drag-over {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  transform: scale(1.02);
+}
+
+.chassis-slot.shake-error {
+  animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  border-color: var(--color-danger) !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-3px, 0, 0); }
+  20%, 80% { transform: translate3d(4px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+  40%, 60% { transform: translate3d(5px, 0, 0); }
+}
+
+/* Slot Installed State */
+.chassis-slot.installed {
+  border-style: solid;
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.slot-installed-content {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.chassis-slot.installed .slot-placeholder {
+  display: none;
+}
+
+.chassis-slot.installed .slot-installed-content {
+  display: flex;
+}
+
+/* Motherboard Bay (Slot 01) */
+.slot-motherboard {
+  min-height: 380px;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.slot-motherboard.installed {
+  background: #0b172a;
+  border-color: #0284c7;
+  padding: 1rem;
+  box-shadow: inset 0 0 30px rgba(2, 132, 199, 0.15);
+}
+
+.motherboard-mounted-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.slot-motherboard.installed .motherboard-mounted-view {
+  display: grid;
+  animation: fadeIn 0.4s ease;
+}
+
+/* CPU Socket Illustration inside Motherboard */
+.mb-cpu-socket {
+  background: #1e293b;
+  border: 2px solid #475569;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.socket-grid {
+  width: 50px;
+  height: 50px;
+  background-image: 
+    linear-gradient(45deg, #334155 25%, transparent 25%), 
+    linear-gradient(-45deg, #334155 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #334155 75%), 
+    linear-gradient(-45deg, transparent 75%, #334155 75%);
+  background-size: 8px 8px;
+  border: 1px solid #64748b;
+  border-radius: 4px;
+}
+
+.socket-label {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* RAM Slot inside Motherboard */
+.slot-ram {
+  min-height: 110px;
+}
+
+.ram-sticks {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.ram-sticks .stick {
+  width: 14px;
+  height: 60px;
+  background: linear-gradient(180deg, #00d2ff 0%, #0369a1 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+}
+
+/* SSD Slot inside Motherboard */
+.slot-ssd {
+  min-height: 110px;
+}
+
+.ssd-heatsink {
+  background: linear-gradient(90deg, #1e293b, #334155);
+  color: var(--color-accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* GPU Slot (Spans full width inside board) */
+.slot-gpu {
+  grid-column: span 2;
+  min-height: 120px;
+}
+
+.gpu-housing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.gpu-fans {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.fan {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px dashed #64748b;
+  position: relative;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Power Supply Shroud Bay (Slot 02) */
+.slot-psu {
+  min-height: 130px;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.psu-housing {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, #1e293b, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius-sm);
+}
+
+.psu-fan-mesh {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #475569;
+  background: radial-gradient(circle, #00d2ff 10%, #090e1a 70%);
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+}
+
+.psu-brand-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #f8fafc;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.installed-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Error Toast Message */
+.error-toast {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: #ef4444;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.3s ease;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.error-toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Completion Modal & Victory Screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: fadeIn 0.35s ease;
+}
+
+.modal-card {
+  background: linear-gradient(180deg, #0f172a 0%, #070d19 100%);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  max-width: 580px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 210, 255, 0.2);
+  position: relative;
+  animation: modalPop 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Glowing Checkmark Animation */
+.success-checkmark-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+}
+
+.checkmark-svg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 3;
+  stroke: #10b981;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0 0 0 #10b981;
+  animation: fillCircle 0.4s ease-in-out 0.4s forwards, scaleCheck 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: #10b981;
+  fill: none;
+  animation: strokeCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke: #10b981;
+  animation: strokeCheck 0.35s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+}
+
+.glow-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes strokeCircle {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes strokeCheck {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes scaleCheck {
+  0%, 100% { transform: none; }
+  50% { transform: scale3d(1.1, 1.1, 1); }
+}
+
+.success-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+  margin-bottom: 1.25rem;
+}
+
+.green-pulse {
+  background-color: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+}
+
+.modal-title {
+  color: #ffffff;
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.modal-description {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.benchmark-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.summary-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+}
+
+.pill-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.15rem;
+}
+
+.pill-val {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent-cyan);
+  font-weight: 700;
+}
+
+.modal-action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .studio-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .instruction-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .progress-container {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-indicator-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .benchmark-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .motherboard-mounted-view {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-gpu {
+    grid-column: span 1;
+  }
+
+  .modal-card {
+    padding: 2rem 1.5rem;
+  }
+}

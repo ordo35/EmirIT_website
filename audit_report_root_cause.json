@@ -1,0 +1,65 @@
+{
+  "audit_metadata": {
+    "target_application": "EmirIT PC Building Simulator Root-Cause Resolution",
+    "auditor_role": "Independent Quality & Security Auditor Agent",
+    "evaluation_standard": "Reset Lifecycle, Strict Validation Gate, Label Standardization, Accessibility",
+    "timestamp": "2026-10-31T15:51:00+03:00",
+    "overall_result": "PASS",
+    "total_tests": 7,
+    "passed_tests": 7,
+    "failed_tests": 0,
+    "score_percentage": 100
+  },
+  "test_cases": [
+    {
+      "id": "AUD-RCA-01",
+      "category": "Reset Bug & Drag-and-Drop Lifecycle",
+      "description": "Verify that clicking 'Reset Simulation' properly restores draggable='true' and full dragstart/drop capability on Step 1 (Motherboard).",
+      "status": "PASS",
+      "findings": "Global event listeners remain permanently active. resetSimulation() resets State.currentStepIndex to 0, clears State.installedComponents, resets all chassis slot classes, and calls updateGuidanceUI() which immediately restores draggable='true' and .active-target to the Motherboard."
+    },
+    {
+      "id": "AUD-RCA-02",
+      "category": "Strict Step Progression Gate",
+      "description": "Verify invalid drops for RAM, RTX 4060, SSD, or Motherboard do NOT advance the active step.",
+      "status": "PASS",
+      "findings": "validateAndSeatComponent() enforces explicit boolean check isCorrectSlot = (droppedId === targetSlotComponent && droppedId === currentExpected.id). When false, error feedback and audio buzz trigger immediately, returning out of the function without incrementing currentStepIndex."
+    },
+    {
+      "id": "AUD-RCA-03",
+      "category": "Try-Until-Correct Mechanism",
+      "description": "Ensure the user can attempt incorrect placements repeatedly without breaking state or skipping steps.",
+      "status": "PASS",
+      "findings": "CSS shake-error animation reflows on demand ('void element.offsetWidth'), error toast displays 'Incorrect slot, try again', and user stays on the exact active step until placing the right component."
+    },
+    {
+      "id": "AUD-RCA-04",
+      "category": "Simplified Naming Standardization",
+      "description": "Ensure all component and slot labels use exact simplified strings: 'Motherboard', 'PSU', 'RTX 4060', 'RAM', 'SSD', and 'Case'.",
+      "status": "PASS",
+      "findings": "Verified across HTML cards, slot titles, action text, topbar branding, JS step configurations, modal summary pills, and descriptions."
+    },
+    {
+      "id": "AUD-RCA-05",
+      "category": "Navigation & Mobile Header Integration",
+      "description": "Verify mobile hamburger toggle on pc-builder.html functions properly to open and close main navigation.",
+      "status": "PASS",
+      "findings": "bindMobileNavigation() added in pc-builder.js with click toggle, aria-expanded state handling, and Escape key dismissal."
+    },
+    {
+      "id": "AUD-RCA-06",
+      "category": "Keyboard & Accessibility Navigation",
+      "description": "Verify tab navigation and keyboard activation (Enter/Space) on components and slots.",
+      "status": "PASS",
+      "findings": "Added tabindex='0' to all chassis slots and bound Enter/Space keydown events on component cards to trigger placement."
+    },
+    {
+      "id": "AUD-RCA-07",
+      "category": "Completion State & Power Telemetry",
+      "description": "Verify completion state after Step 5 (RTX 4060) reveals modal and illuminates power status.",
+      "status": "PASS",
+      "findings": "Chassis power LED turns green, status updates to 'POWER: ACTIVE (100% POST)', and completion modal displays with victory chime and reset option."
+    }
+  ]
+}
+
